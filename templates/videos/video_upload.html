@@ -1,0 +1,29 @@
+{% extends 'base_template.html' %}
+{% load crispy_forms_filters %}
+
+{% load static %}
+
+{% block content %}
+
+    <div class="container mt-5">
+<div class="row">
+    <div class="col-md-4 mb-4">
+
+        <div class="card bg-light text-dark">
+            <div class="card-body">
+                <h1>Upload a Video</h1>
+
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                {{ form|crispy  }}
+
+                <br>
+
+                <button type="submit" class="btn btn-success ">Upload Video</button>
+            </form>
+</div></div></div></div></div>
+
+
+{% endblock %}
+

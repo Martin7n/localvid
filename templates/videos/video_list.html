@@ -1,0 +1,36 @@
+{% extends 'base_template.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+
+{% load static %}
+
+
+
+
+<div class="container mt-5">
+    <div class="row">
+        {% for video in videos %}
+            <div class="col-md-4 mb-4">
+                <!-- Video Card -->
+                <div class="card bg-light text-dark">
+                    <div class="card-body">
+                        <!-- Card Header: Video Title -->
+                        <h5 class="card-title">{{ video.title }}</h5>
+                        <p class="card-text">Filename: {{ video.filename }}</p>
+
+                        <!-- Card Button: Link to stream video -->
+                        <a href="{% url 'video_stream' video.pk %}" class="btn btn-dark">Watch Video</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+{%  endblock %}
